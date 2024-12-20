@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mobil Timer</title>
+  <link rel="stylesheet" href="styles/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+</head>
+<body>
+ 
+ <div id="loading-screen" class="view">
+    <div class="logo" onclick="navigateToSetTimer()"><img src = "assets/logo.svg" alt="Logo"/></div>
+    <p class="slogan">For all your timing needs</p>
+  </div>
+
+ 
+  <div id="set-timer" class="view hidden">
+    <h2>Start Timer</h2>
+    <div class="timer-input">
+      <h3>Minutes</h3>
+      <button onclick="decreaseMinutes()" class="arrow-button button-left"></button>
+      <span id="minute-display">0</span> min
+      <button onclick="increaseMinutes()" class="arrow-button button-right"></button>
+    </div>
+    <div class="timer-input">
+      <h3>Seconds</h3>
+      <button onclick="decreaseSeconds()" class="arrow-button button-left"></button>
+      <span id="second-display">0</span> s
+      <button onclick="increaseSeconds()" class="arrow-button button-right"></button>
+    </div>
+    <button onclick="startTimer()" class="button">Start Timer</button>
+  </div>
+
+ 
+  <div id="analog-timer" class="view hidden">
+    <div id="clock-face">
+      <div id="minute-hand"></div>
+      <div id="second-hand"></div>
+    </div>
+    <button onclick="resetTimer()" class="button">Abort Timer</button>
+  </div>
+
+ 
+  <div id="digital-timer" class="view hidden">
+    <h2 id="digital-display">00:00</h2>
+    <button onclick="resetTimer()" class="button">Abort Timer</button>
+  </div>
+
+  
+  <div id="alarm-view" class="view hidden">
+    <img src = "assets/alarm icon.svg" alt="larm icon"/>
+    <h2>Times up!</h2>
+    <button onclick="resetTimer()" class="button">Set new timer</button>
+    <div class="color-effect"></div>
+  </div>
+
+  
+  <div id="menu-icon" onclick="toggleMenu()">☰</div>
+  <div id="menu" class="hidden">
+    <button onclick="showAnalog()" class="nav-button">Analog Timer</button>
+    <button onclick="showDigital()" class="nav-button">Digital Timer</button>
+  </div>
+
+<script src="scripts/app.js"></script>
+</body>
+</html>

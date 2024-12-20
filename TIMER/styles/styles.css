@@ -1,0 +1,174 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    background: #222222;
+    color: #fff;
+  }
+
+
+ 
+  .view {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+
+  .hidden {
+    display: none;
+  }
+  
+
+  #loading-screen {
+    font-size: 15px;
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+
+  #clock-face {
+    width: 200px;
+    height: 200px;
+    border: 4px dotted #fff; 
+    border-radius: 50%;
+    position: relative;
+}
+
+
+#minute-hand, #second-hand {
+    position: absolute;
+    width: 50%;
+    height: 2px;
+    background: #fff;
+    top: 50%; 
+    left: 50%; 
+    transform-origin: 0 0; 
+    transform: rotate(-90deg); 
+}
+  
+
+  #digital-display {
+    font-size: 48px;
+  }
+  
+
+  #menu-icon {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 100;
+  }
+  
+  #menu {
+    position: fixed;
+    top: 50px;
+    left: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+  }
+  
+  #menu.hidden {
+    display: none;
+  }
+
+  .nav-button {
+    margin: 5px;
+    padding: 10px;
+    background: none;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+  }
+  
+  .button {
+    margin: 5px;
+    margin-top: 25px;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  
+ 
+  .timer-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+  }
+  
+  
+  #minute-display, #second-display {
+    font-weight: bold;
+    font-size: 25px;
+    width: 30px;
+    text-align: center;
+  }
+
+  
+.arrow-button {
+    background: none;      
+    border: none;           
+    cursor: pointer;        
+    padding: 0;
+    width: 30px;            
+    height: 30px;
+    outline: none;          
+  }
+  
+  
+  .button-left::before, .button-right::before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+  }
+  
+  
+  .button-left::before {
+    border-width: 8px 12px 8px 0;
+    border-color: transparent #c0c0c0 transparent transparent;
+  }
+  
+  
+  .button-right::before {
+    border-width: 8px 0 8px 12px;
+    border-color: transparent transparent transparent #c0c0c0;
+  }
+
+
+  .color-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%; 
+    pointer-events: none; 
+    opacity: 0; 
+    transition: opacity 0.5s ease; 
+}
+
+.color-effect.active {
+    opacity: 1; 
+    filter: blur(20px); 
+    box-shadow: 0 0 0px rgba(114, 66, 66, 0.897); 
+}
+
+
+  
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
